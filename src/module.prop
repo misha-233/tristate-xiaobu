@@ -1,0 +1,7 @@
+id=tristate_xiaobu
+name=三段式按键 → 一键闪记
+version=v1.0.0
+versionCode=10000
+author=DSH
+description=把三段式开关变成小布记忆「一键闪记」的触发器:拨到指定档位即抓取当前屏幕存入小布记忆。
+updateJson=https://cdn.jsdelivr.net/gh/misha-233/tristate-xiaobu@main/update.json

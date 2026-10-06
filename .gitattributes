@@ -1,0 +1,12 @@
+# Android 的 sh 不接受 CRLF：脚本一律以 LF 存入与检出
+* text=auto eol=lf
+
+*.sh      text eol=lf
+*.conf    text eol=lf
+*.prop    text eol=lf
+*.ps1     text eol=crlf
+
+# 二进制：不要做任何换行转换
+*.zip     binary
+*.apk     binary
+*.png     binary

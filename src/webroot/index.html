@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三段式按键 → 一键闪记</title>
+  <link rel="stylesheet" type="text/css" href="/internal/insets.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+  <div id="warn" class="warn" hidden></div>
+
+  <header class="head">
+    <h1>三段式按键 → 一键闪记</h1>
+    <button id="refresh" class="ghost">刷新</button>
+  </header>
+
+  <section class="card">
+    <div class="row"><span>当前档位</span><b id="s-pos">—</b></div>
+    <div class="row"><span>铃声模式</span><b id="s-ringer">—</b></div>
+    <div class="row"><span>监听进程</span><b id="s-daemon">—</b></div>
+  </section>
+
+  <section class="card">
+    <label>触发档位</label>
+    <div class="seg" id="f-pos">
+      <button type="button" data-v="1">上档 · 静音</button>
+      <button type="button" data-v="2">中档 · 振动</button>
+      <button type="button" data-v="3">下档 · 响铃</button>
+    </div>
+
+    <label>触发方式</label>
+    <div class="seg" id="f-mode">
+      <button type="button" data-v="position">拨到即触发</button>
+      <button type="button" data-v="double">拨走再拨回</button>
+    </div>
+
+    <label for="f-action">动作</label>
+    <select id="f-action">
+      <option value="flashnote">flashnote · 一键闪记</option>
+      <option value="command">command · 自定义命令</option>
+      <option value="intent">intent</option>
+      <option value="broadcast">broadcast</option>
+      <option value="key">key</option>
+      <option value="none">none · 只记日志</option>
+    </select>
+
+    <label for="f-tt">闪记来源 triggerType</label>
+    <select id="f-tt"></select>
+
+    <label class="check"><input type="checkbox" id="f-screen"> 只在亮屏时触发</label>
+  </section>
+
+  <section class="actions">
+    <button id="save" class="primary">保存并重启监听</button>
+    <button id="test">立即测试</button>
+    <button id="log">查看日志</button>
+    <button id="detect">诊断报告</button>
+  </section>
+
+  <pre id="out" hidden></pre>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
